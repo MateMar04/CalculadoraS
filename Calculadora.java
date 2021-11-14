@@ -26,7 +26,7 @@ public class Calculadora extends javax.swing.JFrame {
     private JButton bUno;
     private JButton bCero;
     private JTextField tfResultado;
-    private JButton ansButton;
+    private JButton bAns;
 
     private double numero1;
     private double numero2;
@@ -157,6 +157,8 @@ public class Calculadora extends javax.swing.JFrame {
                 resultadoAnterior = resultado;
                 tfNumero1.setText("");
                 tfNumero2.setText("");
+                numero1 = 0;
+                numero2 = 0;
             }
         });
 
@@ -169,6 +171,8 @@ public class Calculadora extends javax.swing.JFrame {
                 resultadoAnterior = resultado;
                 tfNumero1.setText("");
                 tfNumero2.setText("");
+                numero1 = 0;
+                numero2 = 0;
             }
         });
 
@@ -181,6 +185,8 @@ public class Calculadora extends javax.swing.JFrame {
                 resultadoAnterior = resultado;
                 tfNumero1.setText("");
                 tfNumero2.setText("");
+                numero1 = 0;
+                numero2 = 0;
             }
         });
 
@@ -193,6 +199,8 @@ public class Calculadora extends javax.swing.JFrame {
                 resultadoAnterior = resultado;
                 tfNumero1.setText("");
                 tfNumero2.setText("");
+                numero1 = 0;
+                numero2 = 0;
             }
         });
 
@@ -201,6 +209,12 @@ public class Calculadora extends javax.swing.JFrame {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 resultado = (numero1 / numero2) * 100;
+                tfResultado.setText(String.valueOf(resultado));
+                resultadoAnterior = resultado;
+                tfNumero1.setText("");
+                tfNumero2.setText("");
+                numero1 = 0;
+                numero2 = 0;
             }
         });
 
@@ -211,6 +225,14 @@ public class Calculadora extends javax.swing.JFrame {
                 tfResultado.setText("");
                 tfNumero1.setText("");
                 tfNumero2.setText("");
+            }
+        });
+
+        bAns.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                tfResultado.setText(String.valueOf(resultadoAnterior));
             }
         });
     }
