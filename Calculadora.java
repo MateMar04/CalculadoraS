@@ -13,7 +13,6 @@ public class Calculadora extends javax.swing.JFrame {
     private JButton bDividir;
     private JButton bPromedio;
     private JButton bPunto;
-    private JButton bIgual;
     private JButton bSetNumero1;
     private JButton bSetNumero2;
     private JLabel lbResultado;
@@ -28,10 +27,12 @@ public class Calculadora extends javax.swing.JFrame {
     private JButton bUno;
     private JButton bCero;
     private JTextField tfResultado;
+    private JButton ansButton;
 
-    private int numero;
-    private int resultado;
-    private int resultadoAnterior;
+    private double numero1;
+    private double numero2;
+    private double resultado;
+    private double resultadoAnterior;
 
     public Calculadora() {
         setTitle("Calculadora");
@@ -107,6 +108,33 @@ public class Calculadora extends javax.swing.JFrame {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 tfResultado.setText(tfResultado.getText() + 9);
+            }
+        });
+
+        bPunto.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                tfResultado.setText(tfResultado.getText() + ".");
+            }
+        });
+
+        bSetNumero1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                numero1 = Double.parseDouble(tfResultado.getText());
+                tfResultado.setText("");
+                tfNumero1.setText(String.valueOf(numero1));
+            }
+        });
+        bSetNumero2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                numero2 = Double.parseDouble(tfResultado.getText());
+                tfResultado.setText("");
+                tfNumero2.setText(String.valueOf(numero2));
             }
         });
     }
