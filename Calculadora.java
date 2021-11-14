@@ -39,6 +39,7 @@ public class Calculadora extends javax.swing.JFrame {
         add(panel1);
         setSize(500, 400);
         setResizable(false);
+
         bCero.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -46,6 +47,7 @@ public class Calculadora extends javax.swing.JFrame {
                 tfResultado.setText(tfResultado.getText() + 0);
             }
         });
+
         bUno.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -53,6 +55,7 @@ public class Calculadora extends javax.swing.JFrame {
                 tfResultado.setText(tfResultado.getText() + 1);
             }
         });
+
         bDos.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -60,6 +63,7 @@ public class Calculadora extends javax.swing.JFrame {
                 tfResultado.setText(tfResultado.getText() + 2);
             }
         });
+
         bTres.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -67,6 +71,7 @@ public class Calculadora extends javax.swing.JFrame {
                 tfResultado.setText(tfResultado.getText() + 3);
             }
         });
+
         bCuatro.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -74,6 +79,7 @@ public class Calculadora extends javax.swing.JFrame {
                 tfResultado.setText(tfResultado.getText() + 4);
             }
         });
+
         bCinco.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -81,6 +87,7 @@ public class Calculadora extends javax.swing.JFrame {
                 tfResultado.setText(tfResultado.getText() + 5);
             }
         });
+
         bSeis.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -88,6 +95,7 @@ public class Calculadora extends javax.swing.JFrame {
                 tfResultado.setText(tfResultado.getText() + 6);
             }
         });
+
         bSiete.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -95,6 +103,7 @@ public class Calculadora extends javax.swing.JFrame {
                 tfResultado.setText(tfResultado.getText() + 7);
             }
         });
+
         bOcho.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -102,6 +111,7 @@ public class Calculadora extends javax.swing.JFrame {
                 tfResultado.setText(tfResultado.getText() + 8);
             }
         });
+
         bNueve.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -127,6 +137,7 @@ public class Calculadora extends javax.swing.JFrame {
                 tfNumero1.setText(String.valueOf(numero1));
             }
         });
+
         bSetNumero2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -136,6 +147,7 @@ public class Calculadora extends javax.swing.JFrame {
                 tfNumero2.setText(String.valueOf(numero2));
             }
         });
+
         bMas.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -147,6 +159,7 @@ public class Calculadora extends javax.swing.JFrame {
                 tfNumero2.setText("");
             }
         });
+
         bMenos.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -158,6 +171,7 @@ public class Calculadora extends javax.swing.JFrame {
                 tfNumero2.setText("");
             }
         });
+
         bPor.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -169,6 +183,7 @@ public class Calculadora extends javax.swing.JFrame {
                 tfNumero2.setText("");
             }
         });
+
         bDividir.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -186,6 +201,16 @@ public class Calculadora extends javax.swing.JFrame {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 resultado = (numero1 / numero2) * 100;
+            }
+        });
+
+        bClear.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                tfResultado.setText("");
+                tfNumero1.setText("");
+                tfNumero2.setText("");
             }
         });
     }
