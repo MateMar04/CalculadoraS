@@ -15,7 +15,6 @@ public class Calculadora extends javax.swing.JFrame {
     private JButton bPunto;
     private JButton bSetNumero1;
     private JButton bSetNumero2;
-    private JLabel lbResultado;
     private JButton bSiete;
     private JButton bOcho;
     private JButton bNueve;
@@ -135,6 +134,58 @@ public class Calculadora extends javax.swing.JFrame {
                 numero2 = Double.parseDouble(tfResultado.getText());
                 tfResultado.setText("");
                 tfNumero2.setText(String.valueOf(numero2));
+            }
+        });
+        bMas.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                resultado = numero1 + numero2;
+                tfResultado.setText(String.valueOf(resultado));
+                resultadoAnterior = resultado;
+                tfNumero1.setText("");
+                tfNumero2.setText("");
+            }
+        });
+        bMenos.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                resultado = numero1 - numero2;
+                tfResultado.setText(String.valueOf(resultado));
+                resultadoAnterior = resultado;
+                tfNumero1.setText("");
+                tfNumero2.setText("");
+            }
+        });
+        bPor.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                resultado = numero1 * numero2;
+                tfResultado.setText(String.valueOf(resultado));
+                resultadoAnterior = resultado;
+                tfNumero1.setText("");
+                tfNumero2.setText("");
+            }
+        });
+        bDividir.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                resultado = numero1 / numero2;
+                tfResultado.setText(String.valueOf(resultado));
+                resultadoAnterior = resultado;
+                tfNumero1.setText("");
+                tfNumero2.setText("");
+            }
+        });
+
+        bPromedio.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                resultado = (numero1 / numero2) * 100;
             }
         });
     }
